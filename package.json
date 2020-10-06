@@ -8,14 +8,22 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "axios": "^0.20.0",
     "next": "latest",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "sqlite3": "^5.0.0",
+    "swr": "^0.3.5"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
+    "@types/sqlite3": "^3.1.6",
     "typescript": "4.0"
   },
   "license": "MIT"
