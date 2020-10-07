@@ -87,6 +87,7 @@ const IndexPage = () => {
   console.log(rows);
   return (
     <Layout title="Home | Next.js + TypeScript Example">
+      <h2>Data from 2019</h2>
       <p className={classes.paragraph}>
         App may crash sometimes because Next.js server routes currently does not
         support reading files, which is needed for loading the list, and I don't
