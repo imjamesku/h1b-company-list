@@ -7,7 +7,8 @@ const options: ConnectionOptions = {
   name: "default",
   type: "sqlite",
   // note that cwd is not the location of this file
-  database: "../csv-parser/database.sqlite",
+  // database: "../csv-parser/database.sqlite",
+  database: "./database.sqlite",
   entities: [Company],
   logging: true,
 };
