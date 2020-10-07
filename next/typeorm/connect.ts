@@ -5,7 +5,8 @@ import path from "path";
 // console.log("1111111111111111111");
 // console.log(process.cwd());
 // console.log("2222222222222222");
-// console.log(path.resolve(process.cwd(), "database.sqlite"));
+// console.log(path.resolve(process.cwd(), "public/database.sqlite"));
+// console.log(path.resolve("public/database.sqlite"));
 
 // cwd is next
 const options: ConnectionOptions = {
@@ -13,7 +14,10 @@ const options: ConnectionOptions = {
   type: "sqlite",
   // note that cwd is not the location of this file
   // database: "../csv-parser/database.sqlite",
+  // database: path.resolve("./database.sqlite"),
+  // database: "./database.sqlite",
   database: path.resolve(process.cwd(), "database.sqlite"),
+  // database: path.resolve("public/database.sqlite"),
   entities: [Company],
   logging: true,
 };
@@ -55,12 +59,7 @@ export async function ensureConnection(
     if (!connection.isConnected) {
       await connection.connect();
     }
-    if (process.env.NODE_ENV !== "production") {
-      await updateConnectionEntities(
-        connection,
-        options.entities as Array<any>
-      );
-    }
+    await updateConnectionEntities(connection, options.entities as Array<any>);
     return connection;
   }
   return await connectionManager.create(options).connect();
