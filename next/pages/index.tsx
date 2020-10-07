@@ -59,7 +59,7 @@ const countFetcher = (url: string) =>
 const IndexPage = () => {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [page, setPage] = useState(0);
-  const [sortedBy, setSortedBy] = useState("CASE_COUNTS");
+  const [sortedBy, setSortedBy] = useState("caseCount");
 
   const { data: rows, error } = useSwr<CompanyData[]>(
     [`/api/h1b/2019`, rowsPerPage, page, sortedBy],
@@ -107,8 +107,8 @@ const IndexPage = () => {
           onChange={(e) => setSortedBy(e.target.value as string)}
           label="sorted by"
         >
-          <MenuItem value="CASE_COUNTS">case count</MenuItem>
-          <MenuItem value="AVG_SALARY">average salary</MenuItem>
+          <MenuItem value="caseCount">case count</MenuItem>
+          <MenuItem value="avgSalary">average salary</MenuItem>
         </Select>
       </FormControl>
       <Paper>

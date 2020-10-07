@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    // "decorators-legacy": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "allowJs": true,
     "alwaysStrict": true,
     "esModuleInterop": true,
