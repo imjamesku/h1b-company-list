@@ -11,7 +11,7 @@ type Props = {
 const useStyles = makeStyles({
   main: {
     maxWidth: "960px",
-    margin: "0 auto",
+    margin: "100px auto",
   },
 });
 
@@ -42,10 +42,10 @@ const Layout = ({ children, title = "This is the default title" }: Props) => {
       </header> */}
       <Drawer />
       <main className={classes.main}>{children}</main>
-      <footer>
-        {/* <hr /> */}
+      {/* <footer>
+        <hr />
         <span>I'm here to stay (Footer)</span>
-      </footer>
+      </footer> */}
     </div>
   );
 };

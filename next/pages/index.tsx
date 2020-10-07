@@ -26,11 +26,15 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
     },
     formControl: {
-      margin: theme.spacing(1),
+      margin: "1rem 0",
+      marginRight: "1rem",
       minWidth: 120,
     },
     selectEmpty: {
       marginTop: theme.spacing(2),
+    },
+    paragraph: {
+      fontSize: "1.2rem",
     },
   })
 );
@@ -83,7 +87,12 @@ const IndexPage = () => {
   console.log(rows);
   return (
     <Layout title="Home | Next.js + TypeScript Example">
-      <h1>Hello Next.js 👋</h1>
+      <p className={classes.paragraph}>
+        App may crash sometimes because Next.js server routes currently does not
+        support reading files, which is needed for loading the list, and I don't
+        want to deploy a dedicated server or database.(I'm using a workaround
+        but it sometimes fails, causing a crash)
+      </p>
       <FormControl variant="outlined" className={classes.formControl}>
         <InputLabel id="rows-per-page-label">rows per page</InputLabel>
         <Select
