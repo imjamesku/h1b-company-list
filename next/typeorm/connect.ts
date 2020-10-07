@@ -1,14 +1,19 @@
 import "reflect-metadata";
 import { getConnectionManager, Connection, ConnectionOptions } from "typeorm";
 import { Company } from "../typeorm/entities/Company";
+import path from "path";
+// console.log("1111111111111111111");
 // console.log(process.cwd());
+// console.log("2222222222222222");
+// console.log(path.resolve(process.cwd(), "database.sqlite"));
+
 // cwd is next
 const options: ConnectionOptions = {
   name: "default",
   type: "sqlite",
   // note that cwd is not the location of this file
   // database: "../csv-parser/database.sqlite",
-  database: "./database.sqlite",
+  database: path.resolve(process.cwd(), "database.sqlite"),
   entities: [Company],
   logging: true,
 };
